@@ -1,4 +1,4 @@
-INSERT INTO tickets (
+INSERT INTO tickets (751
     customer_id, title, description, completed, tech, created_at, updated_at
 ) VALUES (1, 'Laptop not powering on', 'Customer reported that their laptop does not power on even when plugged in.', false, 'unassigned', now(), now()),
     (1, 'Slow computer performance', 'Customer mentioned that their computer is running very slowly.', false, 'unassigned', now(), now()),
