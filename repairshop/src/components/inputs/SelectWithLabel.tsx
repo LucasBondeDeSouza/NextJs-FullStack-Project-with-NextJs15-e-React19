@@ -8,7 +8,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
+} from '@/components/ui/form'
 
 import {
     Select,
@@ -16,7 +16,7 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 type DataObj = {
     id: string,
@@ -71,9 +71,8 @@ export function SelectWithLabel<S>({
                                 </SelectItem>
                             ))}
                         </SelectContent>
-                        
-                    </Select>
 
+                    </Select>
                     <FormMessage />
                 </FormItem>
             )}

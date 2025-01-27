@@ -8,9 +8,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
-
-import { Input } from "@/components/ui/input"
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import { InputHTMLAttributes } from "react"
 
 type Props<S> = {
@@ -40,7 +39,7 @@ export function InputWithLabel<S>({
                     <FormControl>
                         <Input
                             id={nameInSchema}
-                            className={`w-full max-w-sm disabled:text-blue-500 dark:disabled:text-green-500 disabled:opacity-75 ${className}`}
+                            className={`w-full max-w-xs disabled:text-blue-500 dark:disabled:text-yellow-300 disabled:opacity-75 ${className}`}
                             {...props}
                             {...field}
                         />

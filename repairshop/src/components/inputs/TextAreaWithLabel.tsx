@@ -8,7 +8,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
+} from '@/components/ui/form'
 
 import { Textarea } from "@/components/ui/textarea"
 import { TextareaHTMLAttributes } from "react"
@@ -19,7 +19,7 @@ type Props<S> = {
     className?: string,
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
-export function TextAreaWithLabel<S> ({
+export function TextAreaWithLabel<S>({
     fieldTitle, nameInSchema, className, ...props
 }: Props<S>) {
     const form = useFormContext()
@@ -40,7 +40,7 @@ export function TextAreaWithLabel<S> ({
                     <FormControl>
                         <Textarea
                             id={nameInSchema}
-                            className={className}
+                            className={`disabled:text-blue-500 dark:disabled:text-yellow-300 disabled:opacity-75 ${className}`}
                             {...props}
                             {...field}
                         />
