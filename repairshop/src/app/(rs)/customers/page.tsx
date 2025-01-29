@@ -1,5 +1,7 @@
 import CustomerSearch from "@/app/(rs)/customers/CustomerSearch"
 import { getCustomerSearchResult } from "@/lib/queries/getCustomerSearchResults"
+import * as Sentry from "@sentry/nextjs"
+import CustomerTable from "@/app/(rs)/customers/CustomerTable"
 
 export const metadata = {
     title: "Customers Search",
@@ -14,14 +16,18 @@ export default async function Customers({
 
     if (!searchText) return <CustomerSearch />
 
-    // query database
+    const span = Sentry.startInactiveSpan({
+        name: 'getCustomerSearchResults-2'
+    })
     const results = await getCustomerSearchResult(searchText)
+    span.end()
 
-    // return results
     return (
         <>
             <CustomerSearch />
-            <p>{JSON.stringify(results)}</p>
+            {results.length ? <CustomerTable data={results} /> : (
+                <p className="mt-4">No results found</p>
+            )}
         </>
     )
 }
